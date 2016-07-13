@@ -41,7 +41,39 @@
         <h1>'Allo, 'Allo!</h1>
         <h2>HELLO</h2>
         <h3>{{message}}</h3>
-        <input v-model="message">
+        <h3>{{* message }}</h3>
+        <input class="form-control" v-model="message">
+        <p>{{name}}</p>
+        <p>greeting[ <span v-if="greeting">Hello!</span> ]</p>
+        <div id="item-{{ itemId }}">{{ itemId }}</div>
+        <p><a class="btn btn-default btn-sm" v-on:click="doSomething">doSomething</a></p>
+        <ul class="text-left">
+          <li v-for="item in items">{{ item.message }}</li>
+        </ul>
+        <div>
+          <input type="checkbox" id="checkbox" v-model="checked">
+          <label for="checkbox">{{ checked }}</label>
+        </div>
+        <div>
+          <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+          <label for="jack">Jack</label>
+          <input type="checkbox" id="john" value="John" v-model="checkedNames">
+          <label for="john">John</label>
+          <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+          <label for="mike">Mike</label>
+          <br>
+          <span>Checked names: {{ checkedNames | json }}</span>
+        </div>
+        <div>
+          <input type="radio" id="one" value="One" v-model="picked">
+          <label for="one">One</label>
+          <br>
+          <input type="radio" id="two" value="Two" v-model="picked">
+          <label for="two">Two</label>
+          <br>
+          <span>Picked: {{ picked }}</span>
+        </div>
+        <hr>
         <p class="lead">Always a pleasure scaffolding your apps.</p>
         <p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
       </div>
